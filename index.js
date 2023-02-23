@@ -3,7 +3,6 @@ const fs = require('fs');
 
 
 http.createServer((function(rqeuest, response) {
-    console.log(rqeuest.url);
     if(rqeuest.url ==='/') {
         fs.readFile('./bpmn.html', (error, data) => {
             console.log(error);
