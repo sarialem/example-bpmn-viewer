@@ -1,5 +1,11 @@
 # example-bpmn-viewer
-An example of a bpmn web viewer that loads xml based bpmn 2.0 files, expects them to have bpmndi inside and viewes them in the browers using bpmn-js
+An example of a bpmn web modeler using bpmn-js
+It loads a bpmn 2.0 file, expects it to have bpmndi inside and views it in the browser.
+
+The code here demostrates:
+- Uses saveSVG to save the diagram as SVG
+- Uses saveXML diagram XML BPMN format
+- Support `Undo` and `Redo` operations by clicking `u` and `r` on the keyboard respectively
 
 How to Run:
 1. Clone
