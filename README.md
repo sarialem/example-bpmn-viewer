@@ -4,7 +4,7 @@ It loads a bpmn 2.0 file, expects it to have bpmndi inside and views it in the b
 
 The code here demostrates:
 - Uses saveSVG to save the diagram as SVG
-- Uses saveXML diagram XML BPMN format
+- Uses saveXML to save the diagram in XML BPMN format
 - Support `Undo` and `Redo` operations by clicking `u` and `r` on the keyboard respectively
 
 How to Run:
