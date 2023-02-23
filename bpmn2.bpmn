@@ -18,41 +18,41 @@
  <bpmndi:BPMNDiagram id="example_process_diagram">
   <bpmndi:BPMNPlane id="example_process_plane" bpmnElement="process_2a5f7261-e385-469e-88dc-4023492fc1a8">
    <bpmndi:BPMNShape id="start_diagram" bpmnElement="start" isExpanded="false">
-    <dc:Bounds x="52" y="100" width="36" height="36" />
+    <dc:Bounds x="152" y="100" width="36" height="36" />
    </bpmndi:BPMNShape>
    <bpmndi:BPMNShape id="task1_diagram" bpmnElement="task1" isExpanded="false">
-    <dc:Bounds x="140" y="80" width="100" height="80" />
+    <dc:Bounds x="240" y="80" width="100" height="80" />
    </bpmndi:BPMNShape>
    <bpmndi:BPMNShape id="task3_diagram" bpmnElement="task3" isExpanded="false">
-    <dc:Bounds x="140" y="180" width="100" height="80" />
+    <dc:Bounds x="240" y="180" width="100" height="80" />
    </bpmndi:BPMNShape>
    <bpmndi:BPMNShape id="task2_diagram" bpmnElement="task2" isExpanded="false">
-    <dc:Bounds x="280" y="80" width="100" height="80" />
+    <dc:Bounds x="380" y="80" width="100" height="80" />
    </bpmndi:BPMNShape>
    <bpmndi:BPMNShape id="end_diagram" bpmnElement="end" isExpanded="false">
-    <dc:Bounds x="420" y="100" width="36" height="36" />
+    <dc:Bounds x="520" y="100" width="36" height="36" />
    </bpmndi:BPMNShape>
    <bpmndi:BPMNEdge id="flow1_diagram" bpmnElement="flow1">
-    <di:waypoint x="88" y="118" />
-    <di:waypoint x="140" y="118" />
+    <di:waypoint x="188" y="118" />
+    <di:waypoint x="240" y="118" />
    </bpmndi:BPMNEdge>
    <bpmndi:BPMNEdge id="flow3_diagram" bpmnElement="flow3">
-    <di:waypoint x="70" y="136" />
-    <di:waypoint x="70" y="220" />
-    <di:waypoint x="140" y="220" />
+    <di:waypoint x="170" y="136" />
+    <di:waypoint x="170" y="220" />
+    <di:waypoint x="240" y="220" />
    </bpmndi:BPMNEdge>
    <bpmndi:BPMNEdge id="flow2_diagram" bpmnElement="flow2">
-    <di:waypoint x="240" y="118" />
-    <di:waypoint x="280" y="118" />
+    <di:waypoint x="340" y="118" />
+    <di:waypoint x="380" y="118" />
    </bpmndi:BPMNEdge>
    <bpmndi:BPMNEdge id="flow4_diagram" bpmnElement="flow4">
-    <di:waypoint x="240" y="220" />
-    <di:waypoint x="436" y="220" />
-    <di:waypoint x="436" y="136" />
+    <di:waypoint x="340" y="220" />
+    <di:waypoint x="536" y="220" />
+    <di:waypoint x="536" y="136" />
    </bpmndi:BPMNEdge>
    <bpmndi:BPMNEdge id="flow5_diagram" bpmnElement="flow5">
-    <di:waypoint x="380" y="118" />
-    <di:waypoint x="420" y="118" />
+    <di:waypoint x="480" y="118" />
+    <di:waypoint x="520" y="118" />
    </bpmndi:BPMNEdge>
   </bpmndi:BPMNPlane>
  </bpmndi:BPMNDiagram>
