@@ -1,21 +1,80 @@
 <html>
 <head>
-    <script src="https://unpkg.com/bpmn-js/dist/bpmn-viewer.development.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bpmn-js@11.4.1/dist/assets/bpmn-js.css">
+    <link rel="stylesheet" href="https://unpkg.com/bpmn-js@11.4.1/dist/assets/diagram-js.css">
+    <link rel="stylesheet" href="https://unpkg.com/bpmn-js@11.4.1/dist/assets/bpmn-font/css/bpmn.css">
+    <script src="https://unpkg.com/bpmn-js@11.4.1/dist/bpmn-modeler.development.js"></script>
 </head>
 <body>
 <button onclick="displayDiagram()">Load BPMN XML</button>
+<button onclick="saveDiagram()">Save Diagram as SVG</button>
+<button onclick="saveBPMN()">Save Diagram as BPMN</button>
 
 </body>
 </html>
 
 <script>
-    const viewer = new BpmnJS({ container: 'body' });
+    const bpmnJS = new BpmnJS({ container: 'body' });
     async function displayDiagram() {
         try {
             const bpmnXml = await fetch('/bpmn.xml').then((response) => response.text());
-            await viewer.importXML(bpmnXml);
+            await bpmnJS.importXML(bpmnXml);
+            const commandStack = bpmnJS.get("commandStack");
+
+            document.addEventListener("keypress", function(event) {
+                if (event.keyCode === 117) {
+                    commandStack.undo();
+                }
+                if (event.keyCode === 114) {
+                    commandStack.redo();
+                }
+            });
+
         } catch (err) {
             console.error('error loading BPMN 2.0 XML', err);
         }
     }
+
+    async function saveDiagram() {
+        const { svg } = await bpmnJS.saveSVG({ format: true });
+
+            const svgBlob = new Blob([svg], {
+                type: 'image/svg+xml'
+            });
+
+            const fileName = Math.random(36).toString().substring(7) + '.svg';
+
+            const downloadLink = document.createElement('a');
+            downloadLink.download = fileName;
+            downloadLink.innerHTML = 'Get BPMN SVG';
+            downloadLink.href = window.URL.createObjectURL(svgBlob);
+            downloadLink.onclick = function (event) {
+                document.body.removeChild(event.target);
+            };
+            downloadLink.style.visibility = 'hidden';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+    }
+
+    async function saveBPMN() {
+        const { xml } = await bpmnJS.saveXML({format: true});
+
+            const xmlBlob = new Blob([xml], {
+                type: 'image/xml'
+            });
+
+            const fileName = Math.random(36).toString().substring(7) + '.bpmn';
+
+            const downloadLink = document.createElement('a');
+            downloadLink.download = fileName;
+            downloadLink.innerHTML = 'Get BPMN XML';
+            downloadLink.href = window.URL.createObjectURL(xmlBlob);
+            downloadLink.onclick = function (event) {
+                document.body.removeChild(event.target);
+            };
+            downloadLink.style.visibility = 'hidden';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+    }
+
 </script>
