@@ -1,16 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions id="definitions_357f43ba-8ca2-47a1-83b5-9dcd37ae60d7" targetNamespace="http://bpmn.io/schema/bpmn" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_357f43ba-8ca2-47a1-83b5-9dcd37ae60d7" targetNamespace="http://bpmn.io/schema/bpmn">
  <process id="process_2a5f7261-e385-469e-88dc-4023492fc1a8">
   <startEvent id="start">
-   <outgoing>flow2</outgoing>
+   <outgoing>flow1</outgoing>
+   <outgoing>flow3</outgoing>
   </startEvent>
-  <endEvent id="end"/>
-  <userTask id="task0" name="Case Review">
+  <endEvent id="end">
+   <incoming>flow5</incoming>
+   <incoming>flow4</incoming>
+  </endEvent>
+  <serviceTask id="task1" name="Step 1">
+   <incoming>flow1</incoming>
+   <outgoing>flow2</outgoing>
+  </serviceTask>
+  <userTask id="task2" name="Step 2">
    <incoming>flow2</incoming>
+   <outgoing>flow5</outgoing>
   </userTask>
-  <userTask id="task1" name="Case ReCheck"/>
-  <sequenceFlow id="flow2" sourceRef="start" targetRef="task0"/>
-  <sequenceFlow id="flow1" sourceRef="task0" targetRef="task1"/>
-  <sequenceFlow id="flow0" sourceRef="task1" targetRef="end"/>
+  <serviceTask id="task3" name="Step 3">
+   <incoming>flow3</incoming>
+   <outgoing>flow4</outgoing>
+  </serviceTask>
+  <sequenceFlow id="flow1" sourceRef="start" targetRef="task1" />
+  <sequenceFlow id="flow2" sourceRef="task1" targetRef="task2" />
+  <sequenceFlow id="flow5" sourceRef="task2" targetRef="end" />
+  <sequenceFlow id="flow3" sourceRef="start" targetRef="task3" />
+  <sequenceFlow id="flow4" sourceRef="task3" targetRef="end" />
  </process>
+ <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+  <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="process_2a5f7261-e385-469e-88dc-4023492fc1a8">
+   <bpmndi:BPMNShape id="_BPMNShape_start" bpmnElement="start" isExpanded="false">
+    <dc:Bounds x="52" y="100" width="36" height="36" />
+   </bpmndi:BPMNShape>
+   <bpmndi:BPMNShape id="_BPMNShape_task1" bpmnElement="task1" isExpanded="false">
+    <dc:Bounds x="140" y="80" width="100" height="80" />
+   </bpmndi:BPMNShape>
+   <bpmndi:BPMNShape id="_BPMNShape_task3" bpmnElement="task3" isExpanded="false">
+    <dc:Bounds x="140" y="180" width="100" height="80" />
+   </bpmndi:BPMNShape>
+   <bpmndi:BPMNShape id="_BPMNShape_task2" bpmnElement="task2" isExpanded="false">
+    <dc:Bounds x="280" y="80" width="100" height="80" />
+   </bpmndi:BPMNShape>
+   <bpmndi:BPMNShape id="_BPMNShape_end" bpmnElement="end" isExpanded="false">
+    <dc:Bounds x="420" y="100" width="36" height="36" />
+   </bpmndi:BPMNShape>
+   <bpmndi:BPMNEdge id="_BPMNConnection_flow1" bpmnElement="flow1">
+    <di:waypoint x="88" y="118" />
+    <di:waypoint x="140" y="118" />
+   </bpmndi:BPMNEdge>
+   <bpmndi:BPMNEdge id="_BPMNConnection_flow3" bpmnElement="flow3">
+    <di:waypoint x="70" y="136" />
+    <di:waypoint x="70" y="220" />
+    <di:waypoint x="140" y="220" />
+   </bpmndi:BPMNEdge>
+   <bpmndi:BPMNEdge id="_BPMNConnection_flow2" bpmnElement="flow2">
+    <di:waypoint x="240" y="118" />
+    <di:waypoint x="280" y="118" />
+   </bpmndi:BPMNEdge>
+   <bpmndi:BPMNEdge id="_BPMNConnection_flow4" bpmnElement="flow4">
+    <di:waypoint x="240" y="220" />
+    <di:waypoint x="436" y="220" />
+    <di:waypoint x="436" y="136" />
+   </bpmndi:BPMNEdge>
+   <bpmndi:BPMNEdge id="_BPMNConnection_flow5" bpmnElement="flow5">
+    <di:waypoint x="380" y="118" />
+    <di:waypoint x="420" y="118" />
+   </bpmndi:BPMNEdge>
+  </bpmndi:BPMNPlane>
+ </bpmndi:BPMNDiagram>
 </definitions>
