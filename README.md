@@ -5,4 +5,4 @@ How to Run:
 1. Clone
 2. Run ```node index.js```
 3. In your browser, navigate to ```localhost:80```
-4. Clock the button you see in order to load the bpmn xml and display the diagram
+4. Click the button you see in order to load the bpmn xml and display the diagram
