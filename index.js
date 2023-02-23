@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const AutoLayout = require('bpmn-auto-layout');
 
 
 http.createServer((function(rqeuest, response) {
