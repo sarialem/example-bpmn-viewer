@@ -1,5 +1,5 @@
 # example-bpmn-viewer
-An example of a bpmn web viewer that loads xml based bpmn 2.0 files, adds bpmndi to them and viewes then in the browers using bpmn-js and bpmn-atuo-layout
+An example of a bpmn web viewer that loads xml based bpmn 2.0 files, expects them to have bpmndi inside and viewes them in the browers using bpmn-js
 
 How to Run:
 1. Clone
