@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+const AutoLayout = require('bpmn-auto-layout');
 
 
 http.createServer((function(rqeuest, response) {
@@ -11,10 +12,13 @@ http.createServer((function(rqeuest, response) {
         });
     }
     if(rqeuest.url ==='/bpmn.xml') {
+        var autoLayout = new AutoLayout();
+
         fs.readFile('./bpmn2.bpmn', async (error, data) => {
             const xml = data.toString();
+            var layoutedDiagramXML = await autoLayout.layoutProcess(xml);
             response.writeHeader(200, {'Content-Type': 'text/xml'})
-            response.write(xml);
+            response.write(layoutedDiagramXML);
             response.end();
         });
     }
