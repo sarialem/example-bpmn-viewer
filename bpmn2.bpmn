@@ -13,10 +13,12 @@
   <sequenceFlow id="flow5" sourceRef="task2" targetRef="end" />
   <sequenceFlow id="flow3" sourceRef="start" targetRef="task3" />
   <sequenceFlow id="flow4" sourceRef="task3" targetRef="end" />
+
  </process>
 
+ <!-- bpmndi - section for Diagram Interchange elements, describing the visualizations in terms of coordinates -->
  <bpmndi:BPMNDiagram id="example_process_diagram">
-  <bpmndi:BPMNPlane id="example_process_plane" bpmnElement="process_2a5f7261-e385-469e-88dc-4023492fc1a8">
+  <bpmndi:BPMNPlane id="example_process_plane" bpmnElement="example_process">
    <bpmndi:BPMNShape id="start_diagram" bpmnElement="start" isExpanded="false">
     <dc:Bounds x="152" y="100" width="36" height="36" />
    </bpmndi:BPMNShape>
