@@ -16,7 +16,7 @@
 
  </process>
 
- <!-- bpmndi - section for Diagram Interchange elements, describing the visualizations in terms of coordinates -->
+ <!-- bpmndi - a section for Diagram Interchange elements, describing the visualizations in terms of coordinates -->
  <bpmndi:BPMNDiagram id="example_process_diagram">
   <bpmndi:BPMNPlane id="example_process_plane" bpmnElement="example_process">
    <bpmndi:BPMNShape id="start_diagram" bpmnElement="start" isExpanded="false">
