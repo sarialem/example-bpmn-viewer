@@ -1,4 +1,6 @@
 const BpmnModdle = require('bpmn-moddle');
+const AutoLayout = require('bpmn-auto-layout');
+
 const moddle = new BpmnModdle();
 
 const eventActivities = {
@@ -89,8 +91,11 @@ const createProcess = async () => {
     const {
         xml
     } = await moddle.toXML(root);
-    console.log(xml);
-    return xml;
+
+    var autoLayout = new AutoLayout();
+    const layoutedDiagramXML = await autoLayout.layoutProcess(xml);
+
+    return layoutedDiagramXML;
 }
 
 module.exports= { createProcess};
